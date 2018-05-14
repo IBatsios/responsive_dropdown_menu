@@ -367,10 +367,11 @@ nav {
 }
 
 .logo {
-    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     float: left;
-    margin-left: 100px;
-    overflow: hidden;
+    /*padding: 18px 0 0 30px;*/
 }
 
 .logo img {
@@ -431,8 +432,22 @@ nav {
   } 
 
   /* start of medium screens */
-@media screen and (max-width: 1392px) {
-     
+@media screen and (max-width: 1290px) {
+     .menu-li {
+      font-size: 1vw;
+     }
+
+}
+
+@media screen and (max-width: 1072px) {
+  .menu {
+    position: absolute;
+    margin-top: 50px;
+  }
+
+  .menu-li {
+      font-size: 1.5vw;
+     }
 
 }
     
@@ -533,22 +548,28 @@ nav {
     left: 50%;
   }
 
-  nav img {
-    margin: 20px -20px 0 0 ;
-    float: right;
-    display: inline-block;
-    width: 85%;
-    height: auto;
-  }
-
   .menu {
     display: none;
+    position: relative;
   }
 
   .menu.change {
     display: inline-block;
     line-height: 30px;
     font-family: 'Stereo Gothic 200';
+  }
+  .menu-ul {
+    display: inline-block;
+  }
+  .menu-li {
+    font-size: 3vw;
+    display: inline-block;
+    width: 200px;
+    text-align: left;
+  }
+
+  .menu a {
+    display: inline-block;
   }
 
   /*
@@ -559,8 +580,20 @@ nav {
     * Start Menu Options
     */
 
+    .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    padding: 18px 0 0 30px;
+  }
+    .menu {
+      margin-top: 0;
+      padding: 0;
+    }
+
     .menu-ul {
-      margin-left: 100px;
+      padding: 0;
     }
 
     .menu a {
@@ -575,10 +608,26 @@ nav {
     }
 
     .menu-li {
+      font-size: 4vw;
       float: left;
       clear: left;
     }
 
+    /*
+     * Remove underline effects
+     */
+
+    .hvr-underline-from-center {
+      display: none;
+    }
+
+    .hvr-underline-from-center:before {
+      display: none;
+    }
+
+    .hvr-underline-from-center:hover:before, .hvr-underline-from-center:focus:before, .hvr-underline-from-center:active:before {
+      display: none;
+    }
 }
 
 
@@ -673,24 +722,6 @@ nav {
     left: 50%;
   }
 
-  nav img {
-    margin: 20px -20px 0 0 ;
-    float: right;
-    display: inline-block;
-    width: 85%;
-    height: auto;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .menu.change {
-    display: inline-block;
-    line-height: 30px;
-    font-family: 'Stereo Gothic 200';
-  }
-
   /*
    * End hamburger toggle
    */
@@ -699,8 +730,25 @@ nav {
     * Start Menu Options
     */
 
+  .logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    float: left; 
+    padding: 18px 0 0 0; 
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .menu.change {
+    display: inline-block;
+    font-family: 'Stereo Gothic 200';
+  }
+
     .menu-ul {
-      margin-left: 100px;
+      padding-left: 50px;
     }
 
     .menu a {
@@ -720,5 +768,34 @@ nav {
     }
 }
 
+/* To fix floating logo */
+@media screen and (max-width: 438px) {
+  .logo {
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+  }
 
+  #nav-icon {
+    position: relative;
+    margin-top: 90px;
+  }
+
+  .menu-ul {
+    position: absolute;
+    margin: 70px;
+    margin-left: -150px;
+  }
+
+}
+
+@media screen and (max-width: 309px) {
+  .menu-ul {
+    margin: 0;
+    top: 0;
+    left: 0;
+    margin-top: -70px;
+  }
+}
 
